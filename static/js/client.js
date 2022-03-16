@@ -127,8 +127,8 @@ const go_in_clciked = () => {
     console.log('berfore ? operator');
     desc = val2 == '' ? "Hey There..!! I am inside Haveli" : val;
     console.log("before replace all")
-    desc = desc.replaceAll("<", " ");
-    desc = desc.replaceAll(">", " ");
+//     desc = desc.replaceAll("<", " ");
+//     desc = desc.replaceAll(">", " ");
     console.log("after replace all")
 
     joining_status = true;
