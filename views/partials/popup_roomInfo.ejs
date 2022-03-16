@@ -1,0 +1,27 @@
+<div class="holder" id="popup_roomInfo" style=" position: fixed; width: 100%; /* top: 9vh; */ height: 100vh;display:none;top:0px;z-index: 1;background: rgba(0, 0, 0, 0.73);">
+    <div class="info" style="color: rgb(0, 0, 0);max-width: 362px;border: 0px solid #0391bd;margin: auto;padding: 37px 23px;font-size: 125%;position: relative;top: 13%;/* left: 28px; */border-radius: 7px;
+    /* background: #15374c; */    background: #dde5e7;font-weight: 500;
+    font-size: 110%;">
+        <div>
+            <div style=" border-left: 4px solid #11acbd;padding: 9px 25px;font-size: 133%;">Room : <span id="roomId_popup"> 233533</span> </div>
+            <div style="text-align: center; margin-top: 22px; border: 3px solid #0073ba;border-radius: 6px;padding: 17px 2px;background-color: #c8e1f0;color: black;font-weight: 450;position: relative;">
+                <span id="roomLink_popup" style="font-size:77%"> http://localhost:8080/room/231335</span>
+                <span style=" position: absolute; left: -2px;  bottom: -28px;" class="badge bg-primary">Link</span>
+            </div>
+            <div style=" text-align: center;position: relative;top: 18px;">
+                <button onClick="copyClicked()" class="btn-sm btn btn-success"><b>Copy</b></button>
+                <button onClick="tooglePopUp_roomInfo()" class="btn-sm btn btn-success mx-2"><b>Cancel</b></button>
+            </div>
+
+            <div style="position: relative;margin: 21px 0px;/* margin-left: 26px; */font-size: 69%;top: 22px;">
+                <img src="https://sunnychatv2.herokuapp.com/static/media/house1.png" alt="" style="height: 43px;width: 43px;border-radius: 7px;object-fit: cover;">
+                <div style="font-size: 177%;position: absolute;left: 44px;top: 5px;border-left: 4px solid #11acbd;padding-left: 6px;margin-left: 12px;">
+                    Haveli
+                    <div style="position: absolute;font-size: 57%;width: 111px;color: #0b5562;;bottom: 4px;left: 75px;font-family: cursive;">
+                        Say no to Fun</div>
+                </div>
+                <div style="position: absolute;left: 86px;font-size: 95%;bottom: -8px;">Developed by Aditya</div>
+            </div>
+        </div>
+    </div>
+</div>

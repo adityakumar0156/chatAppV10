@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <script>
+        var data_recieved = "<%=room%>"
+    </script>
+    <!-- Required meta tags -->
+    <!-- prevent user to zoom in mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8">
+    <meta name="google-signin-client_id" content="589386215540-m027i5u89f9nq3jm2fuca7430m5r5qdi.apps.googleusercontent.com">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="icon" type="image/png" href="./static/media/favicon.png" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script defer src="/static/js/google_auth_manage.js"></script>
+    <title>Join - Haveli</title>
+</head>
+
+<body>
+    <%- include('./partials/header'); %>
+
+        <div id="about_page">
+            <%- include('./partials/about'); %>
+
+        </div>
+        <div id="features_page">
+            <%- include('./partials/features'); %>
+
+        </div>
+        <div id="support_page">
+            <%- include('./partials/support'); %>
+
+        </div>
+
+        <div id="main" style="margin-top: 90px;">
+
+            <div style="
+                text-align: center;max-width:300px;margin:auto">
+
+                <img src="/static/media/qw.png" style="max-width: 301px;/* border: 2px solid; */  margin: 29px 0px " alt="">
+            </div>
+            <!-- </div> -->
+
+            <div style=" color: white;height: 280px;   border: 3px solid;/* padding-top: 26px; */border: 4px solid #23656c;background-color: #007c89; max-width: 580px; /* position: relative; */    /* left: 0%; */margin: auto;border-radius: 16px;padding: 50px 0px;   ">
+                <div style=" padding-left: 26px;position: relative;text-align: center; ">
+                    <div style="   /* box-shadow: 0px 0px 3px 3px #48c46c; */ width: 120px;    ">
+
+                        <div class="g-signin2" data-onsuccess="onSignIn" id="google_btn">Sign In</div>
+                    </div>
+                    <input type="text" placeholder="Room ID" id="room_input" style=" position: absolute; top: -1px;left: 193px; height: 39px; border-radius: 5px; border: 2px solid white; padding-left: 23px; width: 110px;font-size: 120%;">
+                    <div style=" position: absolute; margin-top: 20px; left: 55px; margin-right: 35px; " id="desc">Join using Google account, Just type room and click SignIn button.</div>
+                    <Button style="  /* font-size: 95%; */border: 2px solid white; /* border-radius: 3px; */  padding: 0px 9px;   background-color: white;    height: 39px;    position: absolute;    left: 29%;    bottom: -119px; color: #757575;    /* box-shadow: 0px 0px 3px 3px #48c46c; */ cursor: pointer;   "
+                        onClick=createRoom()> <img id="icon_home" width="30px" height="30px"
+                            src="./static/media/house.png" />
+
+                        &nbsp&nbsp&nbsp&nbsp&nbspCreate Room ID</Button>
+
+                    <div style=" position: absolute;margin-top: 20px; left: 55px; margin-right: 35px; bottom: -171px;  ">
+                        You can also join with any arbitrary room ID!</div>
+                    <div style="position: absolute;  bottom: -181px;font-size: 113%;font-weight: 600;left: 27px;">
+                        <div id="link_name" style=" font-size: 77%;padding: 0px 20px; background-color: #2f6a70;border-radius: 6px;letter-spacing: 1.3px; ">
+                        </div>
+                        <button style="" id="copy_link" onClick="copyClicked()">Copy Link</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;max-width:400px;margin:auto">
+
+                <img id="" style=" object-fit: contain; width: 100%;" src="./static/media/wq12.png" />
+            </div>
+
+            <p class="emoji">👩🧑🤷‍♀️🙆‍♀️</p>
+
+            <form action="./room" method="POST" style="display: none">
+                <input type="text" name="name" value="" id="name">
+                <input type="text" name="dp" value="" id="dp">
+                <input type="text" name="room" id="room">
+                <input type="text" name="gmail" id="gmail">
+                <button type="submit" id="submit"></button>
+            </form>
+
+        </div>
+        <div>
+
+            <%- include('./partials/logo'); %>
+        </div>
+        <div>
+
+            <%- include('./partials/footer'); %>
+        </div>
+        <div style=" display: none; position: fixed;top: 15vh; margin: auto; width: 100%;" id="roomIdPop">
+            <%- include('./partials/roomLinkPop'); %>
+
+        </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
