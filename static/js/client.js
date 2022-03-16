@@ -54,7 +54,7 @@ const obj_entryMusic = {
 peer = new Peer(undefined, {
     path: 'peerjs',
     host: '/', // ye wala host peer create kr k dega...
-    port: 8887 || process.env.PORT,
+    port: 443,
 
 })
 
