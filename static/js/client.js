@@ -1612,7 +1612,7 @@ const roomUsers = () => {
             const str3 = `</div></div></div>`
             let str2 = ``;
             for (let e in result.result) {
-                str2 += `<div class="user" style=" margin: 0px 17px;text-align: center;"> <img class="imgUser" src=${e.dp} alt=""> <p>${e.name}</p>  </div>`;
+                str2 += `<div class="user" style=" margin: 0px 17px;text-align: center;"> <img class="imgUser" src=${result.result[e].dp} alt=""> <p>${result.result[e].name}</p>  </div>`;
             }
             document.getElementById('usersListFromFE').innerHTML = str1 + str2 + str3;
         }
