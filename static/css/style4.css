@@ -1,0 +1,191 @@
+@media only screen and (max-width: 500px) {
+    .message {
+        max-width: 92%;
+        min-width: 47%;
+        padding-bottom: 20px;
+        margin: 18px 0px;
+        border: 2px solid rgb(0, 71, 60);
+        border-radius: 10px;
+        position: relative;
+        font-size: 142%;
+        font-family: 'NotoColorEmoji', 'Roboto', cursive;
+        font-weight: 500;
+        word-spacing: -22px;
+        text-align: justify;
+        letter-spacing: -2px;
+    }
+/* designed for emojis only */
+    .message {   
+        max-width: 92%;
+        min-width: 47%;
+        padding-bottom: 20px;
+        margin: 18px 0px;
+        border: 2px solid rgb(22 97 110);
+        border-radius: 10px;
+        position: relative;
+        font-size: 250%;
+        font-family: 'NotoColorEmoji', 'Roboto', cursive;
+        font-weight: 500;
+        word-spacing: -22px;
+        text-align: justify;
+        letter-spacing: -2px;
+    }
+
+
+
+
+
+
+    .time {
+        position: absolute;
+        bottom: 0px;
+        font-size: 14px;
+        right: 10px;
+        font-family: 'Hind Siliguri';
+        word-spacing: 0px;
+        letter-spacing: 0px;
+    }
+    .name {
+        cursor: pointer;
+        width: max-content;
+        font-weight: initial;
+        padding: 0px 15px;
+        color: white;
+        text-align: center;
+        /* width: 85px; */
+        background-color: #5b8078;
+        height: 19px;
+        position: absolute;
+        left: 0px;
+        top: -22px;
+        border-radius: 15px;
+        font-size: 16px;
+        font-family: 'Hind Siliguri';
+        letter-spacing: 0px;
+    }
+    .right {
+        float: right;
+        clear: both;
+        background-color: rgb(181 196 199);
+    }
+    .left {
+        float: left;
+        clear: both;
+        background-color: rgb(152 178 183);
+    }
+
+    .joined {
+        font-weight: initial;
+        padding: 0px 15px;
+        color: white;
+        text-align: center;
+        max-width: 285px;
+        background-color: #16616e;
+        height: 39px;
+        border-radius: 15px;
+        margin: 20px auto;
+        clear: both;
+        font-size: 90%;
+        letter-spacing: 0px;
+    }
+    .name_anony {
+        cursor: pointer;
+        width: max-content;
+        font-weight: initial;
+        padding: 0px 15px;
+        color: aqua;
+        text-align: center;
+        /* width: 85px; */
+        background-color: #5b8078;
+        height: 19px;
+        position: absolute;
+        left: 0px;
+        top: -22px;
+        border-radius: 15px;
+        font-size: 80%;
+        font-family: 'Hind Siliguri';
+        word-spacing: 0px;
+        letter-spacing: 0px;
+    }
+    .name_anony {
+        cursor: pointer;
+        width: max-content;
+        font-weight: initial;
+        padding: 0px 15px;
+        color: aqua;
+        text-align: center;
+        /* width: 85px; */
+        background-color: #5b8078;
+        height: 19px;
+        position: absolute;
+        left: 0px;
+        top: -22px;
+        border-radius: 15px;
+        font-size: 80%;
+        font-family: 'Hind Siliguri';
+        word-spacing: 0px;
+        letter-spacing: 0px;
+    }
+    .sent {
+        color: rgb(0 255 178);
+        position: absolute;
+        bottom: -24px;
+        right: 10px;
+        font-size: 14px;
+        font-family: 'Hind Siliguri';
+    }
+
+    .sending {
+        color: white;
+        position: absolute;
+        bottom: -24px;
+        right: 10px;
+        font-size: 14px;
+        font-family: 'Hind Siliguri';
+    }
+}
+
+
+
+.dropup-content button {
+    color: #523f3f;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    border: none;
+    font-size: 123%;
+    font-weight: 450;
+    background-color: #dbedf1;
+    /* border-radius: 12px; */
+    font-weight: 600;
+    font-family: 'Hind Siliguri';
+}
+
+
+.dropup-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    bottom: 31px;
+    right: 0px;
+    z-index: 1;
+    border-radius: 6px;
+    /* border: 2px solid #16616e; */
+    /* background-color: black; */
+}
+
+#messageInp {
+    padding: 14px 14px 14px 25px;
+    width: 98%;
+    border: 3px solid #16616e;
+    border-radius: 26px;
+    height: 27px;
+    margin: 10px 0px;
+    background-color: #effdff;
+    font-size: 120%;
+    box-shadow: 0px 0px 17px 3px #74b4bf;
+    font-family: 'NotoColorEmoji', 'Roboto', 'Hind Siliguri';
+    word-spacing: -18px;
+}

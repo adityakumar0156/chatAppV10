@@ -1,0 +1,988 @@
+@font-face {
+    font-family: 'NotoColorEmoji';
+    src: url('./NotoColorEmoji.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.footer {
+    padding: 5px 0px;
+    background-color: #16616e;
+    height: 34px;
+    margin-top: 12px;
+    text-align: center;
+    /* padding: 10px; */
+    font-family: 'Hind Siliguri', sans-serif;
+    position: relative;
+    color: aliceblue;
+    z-index: 1000;
+}
+
+#userList {
+    font-size: 135%;
+    font-weight: 500;
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: #375e64;
+}
+
+#send {
+    position: relative;
+    top: -2px;
+    left: 5px;
+}
+
+.nav {
+    position: fixed;
+    z-index: 111;
+    background-color: #9fc8af;
+    width: 100%;
+    display: block;
+}
+
+.logo {
+    /* display: block; */
+    width: 46px;
+    height: 46px;
+    object-fit: cover;
+    border: 2px solid white;
+    margin: 6px;
+    float: left;
+    border-radius: 10px;
+}
+
+.container {
+    padding: 14px 6px;
+    max-width: 955px;
+    /* background-color: rgb(71, 65, 65); */
+    margin: auto;
+    height: 72vh;
+    overflow-y: auto;
+    position: relative;
+    margin-top: 25px;
+}
+
+#typing {
+    padding: 5px 15px;
+    color: white;
+    text-align: center;
+    margin: 0px 10px;
+    margin-top: 10px;
+    background-color: #263d38;
+    height: 25px;
+    /* position: absolute; */
+    text-align: center;
+    border-radius: 15px;
+    font-size: 110%;
+    /* left: 48%; */
+    font-family: 'Hind Siliguri', sans-serif;
+    float: left;
+}
+
+
+/* 
+#users {
+    cursor: auto;
+    border: 2px solid white;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 5px 15px;
+    color: white;
+    text-align: center;
+    margin: 0px 5px;
+    margin-top: 10px;
+    background-color: #278772;
+    ;
+    height: 35px;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 100%;
+    font-family: 'Hind Siliguri', sans-serif;
+    float: left;
+} */
+
+
+/* 
+#profile {
+    border: 2px solid white;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 5px 8px;
+    color: white;
+    text-align: center;
+    margin: 0px 0px;
+    margin-top: 10px;
+    background-color: #278772;
+    height: 35px;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 100%;
+    font-family: 'Hind Siliguri', sans-serif;
+    float: left;
+}
+
+#profile:active {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 5px 8px;
+    color: white;
+    text-align: center;
+    margin: 0px 0px;
+    margin-top: 10px;
+    background-color: #144b3f;
+    height: 35px;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 100%;
+    font-family: 'Hind Siliguri', sans-serif;
+    float: left;
+} */
+
+
+/* .message {
+    max-width: 55%;
+    min-width: 18%;
+    padding: 14px;
+    margin: 19px 0px;
+    border: 2px solid rgb(0, 71, 60);
+    border-radius: 10px;
+    position: relative;
+    font-size: 100%;
+    font-family: 'Hind Siliguri', sans-serif;
+} */
+
+
+/* 2nd version*/
+
+.message {
+    max-width: 92%;
+    min-width: 29%;
+    padding-bottom: 20px;
+    margin: 18px 0px;
+    border: 2px solid rgb(0, 71, 60);
+    border-radius: 10px;
+    position: relative;
+    font-size: 130%;
+    /* font-family: 'NotoColorEmoji', 'Roboto', 'Hind Siliguri'; */
+    font-weight: 600;
+    /* word-spacing: -22px; */
+    word-spacing: 0px;
+    /* text-align: justify; */
+    letter-spacing: 0px;
+    padding: 15px 15px 20px 14px;
+    word-wrap: break-word;
+}
+
+.messageEmojiOnly {
+    max-width: 92%;
+    min-width: 47%;
+    padding-bottom: 20px;
+    margin: 18px 0px;
+    border: 2px solid rgb(22 97 110);
+    border-radius: 10px;
+    position: relative;
+    font-size: 250%;
+    font-family: 'NotoColorEmoji', 'Roboto', 'Hind Siliguri';
+    font-weight: 500;
+    word-spacing: -22px;
+    text-align: justify;
+    letter-spacing: -3px;
+    padding: 15px 15px 20px 14px;
+    word-wrap: break-word;
+}
+
+@media only screen and (max-width: 768px) {
+    .end {
+        /* position: fixed;
+        bottom: 0px;
+        width: 100%; */
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+    }
+    /* For mobile phones: */
+    /* .message {
+        max-width: 70%;
+        min-width: 43%;
+        padding-bottom: 20px;
+        margin: 18px 0px;
+        border: 2px solid rgb(0, 71, 60);
+        border-radius: 10px;
+        position: relative;
+        font-size: 120%;
+        font-family: 'Hind Siliguri', sans-serif;
+        font-weight: 500;
+    } */
+    /* 2nd version */
+    .message {
+        max-width: 92%;
+        min-width: 47%;
+        padding-bottom: 20px;
+        margin: 18px 0px;
+        border: 2px solid rgb(0, 71, 60);
+        border-radius: 10px;
+        position: relative;
+        font-size: 125%;
+        /* font-family: 'NotoColorEmoji', 'Roboto', 'Hind Siliguri'; */
+        /* font-family: 'Hind Siliguri'; */
+        font-weight: 600;
+        /* word-spacing: -22px; */
+        word-spacing: 0px;
+        /* text-align: justify; */
+        letter-spacing: 0px;
+        padding: 15px 15px 20px 14px;
+        word-wrap: break-word;
+    }
+    /* message for emoji only */
+    .messageEmojiOnly {
+        max-width: 92%;
+        min-width: 47%;
+        padding-bottom: 20px;
+        margin: 18px 0px;
+        border: 2px solid rgb(22 97 110);
+        border-radius: 10px;
+        position: relative;
+        font-size: 250%;
+        font-family: 'NotoColorEmoji', 'Roboto', 'Hind Siliguri';
+        font-weight: 600;
+        word-spacing: -22px;
+        text-align: justify;
+        letter-spacing: -3px;
+        padding: 15px 15px 20px 14px;
+        word-wrap: break-word;
+    }
+    .memes_img {
+        /* max-width: 40%; */
+        object-fit: fill;
+        max-width: 150px;
+    }
+    .container {
+        padding: 14px 6px;
+        max-width: 955px;
+        /* background-color: rgb(71, 65, 65); */
+        margin: auto;
+        /* height: 75vh; */
+        height: 70vh;
+        overflow-y: auto;
+        position: relative;
+        /* margin-top: 35px; */
+        margin-top: -23px;
+    }
+    /* #messageInp {
+        padding: 14px 14px 14px 25px;
+        width: 98%;
+        border: 3px solid #16616e;
+        border-radius: 26px;
+        height: 27px;
+        margin: 10px 0px;
+        background-color: #effdff;
+        font-size: 120%;
+        box-shadow: 0px 0px 17px 7px #16616e;
+    } */
+}
+
+.textLink {
+    font-weight: 400;
+    /* font-style: italic; */
+    text-decoration: none;
+}
+
+.textEmail {
+    font-weight: 400;
+    /* font-style: italic; */
+    text-decoration: none;
+    color: #fb0064;
+}
+
+.planeText {
+    word-spacing: 0px;
+    display: inline;
+}
+
+
+/* #messageInp {
+    padding: 14px 14px 14px 25px;
+    width: 98%;
+    border: 3px solid #16616e;
+    border-radius: 26px;
+    height: 27px;
+    margin: 10px 0px;
+    background-color: #effdff;
+    font-size: 120%;
+    box-shadow: 0px 0px 17px 7px #16616e;
+} */
+
+input[type=text]:focus {
+    border: 3px solid #198754;
+}
+
+
+/* .left {
+    float: left;
+    clear: both;
+    background-color: rgb(194, 224, 219);
+} */
+
+
+/* 2nd version */
+
+.left {
+    float: left;
+    clear: both;
+    background-color: rgb(152 178 183);
+    animation: swing-in-top-bck 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+@keyframes swing-in-top-bck {
+    0% {
+        transform: rotateX(70deg);
+        transform-origin: top;
+    }
+    100% {
+        transform: rotateX(0deg);
+        transform-origin: top;
+    }
+}
+
+
+/* .right {
+    float: right;
+    clear: both;
+    background-color: rgb(109, 209, 179);
+} */
+
+
+/* 2nd version */
+
+.right {
+    float: right;
+    clear: both;
+    background-color: rgb(181 196 199);
+    animation: swing-in-top-fwd 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+@keyframes swing-in-top-fwd {
+    0% {
+        transform: rotateX(-100deg);
+        transform-origin: top;
+    }
+    100% {
+        transform: rotateX(0deg);
+        transform-origin: top;
+    }
+}
+
+#send-container {
+    display: block;
+    margin: auto;
+    text-align: center;
+    max-width: 985px;
+    width: 75%;
+    /* background-color: #51ad94; */
+}
+
+
+/* .joined {
+    font-weight: initial;
+    padding: 0px 15px;
+    color: white;
+    text-align: center;
+    max-width: 285px;
+    background-color: #16616e;
+    height: 33px;
+    border-radius: 15px;
+    margin: 20px auto;
+    clear: both;
+    font-size: 90%;
+} */
+
+
+/* 2nd version */
+
+.joined {
+    font-weight: initial;
+    padding: 0px 15px;
+    color: white;
+    text-align: center;
+    max-width: 285px;
+    background-color: #16616e;
+    height: 39px;
+    border-radius: 15px;
+    margin: 20px auto;
+    clear: both;
+    font-size: 90%;
+    letter-spacing: 0px;
+    font-family: 'Hind Siliguri';
+    word-spacing: 0px;
+    animation: swing-in-top-fwd 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+
+/* .time {
+    position: absolute;
+    bottom: 0px;
+    font-size: 67%;
+    right: 10px;
+} */
+
+
+/* 2nd version */
+
+.time {
+    position: absolute;
+    bottom: 0px;
+    font-size: 14px;
+    right: 44px;
+    font-family: 'Hind Siliguri';
+    word-spacing: 0px;
+    letter-spacing: 0px;
+}
+
+
+/* .name {
+    cursor: pointer;
+    width: max-content;
+    font-weight: initial;
+    padding: 0px 15px;
+    color: white;
+    text-align: center;
+  
+    background-color: #5b8078;
+    height: 19px;
+    position: absolute;
+    left: 0px;
+    top: -22px;
+    border-radius: 15px;
+    font-size: 80%;
+} */
+
+
+/* 2nd versio */
+
+.name {
+    cursor: pointer;
+    width: max-content;
+    font-weight: initial;
+    padding: 0px 15px;
+    color: white;
+    text-align: center;
+    /* width: 85px; */
+    background-color: #5b8078;
+    height: 19px;
+    position: absolute;
+    left: 0px;
+    top: -22px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-family: 'Hind Siliguri';
+    letter-spacing: 0px;
+    word-spacing: 0px;
+}
+
+#join-container {
+    display: block;
+    margin: auto;
+    text-align: center;
+    max-width: 985px;
+    width: 65%;
+}
+
+
+/* #messageInp {
+    padding: 14px 14px 14px 25px;
+    width: 98%;
+    border: 3px solid #16616e;
+    border-radius: 26px;
+    height: 27px;
+    margin: 10px 0px;
+    background-color: #effdff;
+    font-size: 120%;
+    box-shadow: 0px 0px 17px 3px #74b4bf;
+} */
+
+
+/* 2nd version */
+
+#messageInp {
+    color: white;
+    padding: 14px 14px 14px 25px;
+    width: 98%;
+    /* border: 3px solid #16616e; */
+    border: 3px solid #242e39;
+    /* border-radius: 26px; */
+    border-radius: 11px;
+    height: 27px;
+    margin: 10px 0px;
+    /* background-color: #effdff; */
+    background-color: #171d24;
+    font-size: 120%;
+    /* box-shadow: 0px 0px 17px 3px #74b4bf; */
+    box-shadow: 0px 0px 5px 1px #74b4bf;
+    /* font-family: 'NotoColorEmoji', 'Roboto', 'Hind Siliguri'; */
+    /* word-spacing: -18px; */
+}
+
+.btn_custom {
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 6px;
+    height: 34px;
+}
+
+#vids {
+    display: none;
+}
+
+video {
+    display: none;
+}
+
+.hidden_btn_memes {
+    display: none;
+}
+
+
+/* .parent {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    left: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+    padding: 30px;
+    overflow-x: scroll;
+    background: #f5f5f5;
+    white-space: nowrap;
+}
+
+.child {
+    width: 200px;
+    height: 100%;
+    margin-right: 30px;
+    padding: 25px;
+    box-sizing: border-box;
+    background: #3b3b3b;
+    display: inline-block;
+} */
+
+.meme_container {
+    overflow-y: auto;
+    display: block;
+    margin: auto;
+}
+
+#meme_search {
+    border-radius: 10px;
+    width: 76%;
+    border: 3px solid #198754;
+    padding-left: 20px;
+    height: 37px;
+    font-size: 118%;
+    background-color: #ccdcdf;
+}
+
+.memes_img {
+    /* max-width: 40%; */
+    object-fit: fill;
+    max-width: 225px;
+    cursor: pointer;
+}
+
+
+/* .sent {
+    color: rgb(0 255 178);
+    position: absolute;
+    bottom: -24px;
+    right: 10px;
+    font-size: 78%;
+} */
+
+
+/* 2nd version */
+
+.sent {
+    color: rgb(0 255 178);
+    position: absolute;
+    bottom: -24px;
+    right: 10px;
+    font-size: 14px;
+    font-family: 'Hind Siliguri';
+    letter-spacing: 0px;
+}
+
+
+/* .sending {
+    color: white;
+    position: absolute;
+    bottom: -24px;
+    right: 10px;
+    font-size: 78%;
+} */
+
+
+/* 2nd version */
+
+.sending {
+    color: white;
+    position: absolute;
+    font-size: 14px;
+    font-family: 'Hind Siliguri';
+    letter-spacing: 0px;
+    width: 21px;
+    top: -47px;
+    right: -4px;
+    font-weight: 700;
+}
+
+.img {
+    width: 80px;
+    height: 80px;
+    object-fit: fill;
+    /* background-image: url(../media/download.png); */
+    background-image: url(https://c.tenor.com/hdDC18mel8oAAAAj/loading-buffer.gif);
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.spnr {
+    /* border: 2px solid red; */
+    display: inline-block;
+    position: absolute;
+    left: 45%;
+}
+
+#copyLink {
+    height: 23px;
+    width: 73px;
+    font-size: 85%;
+    font-weight: 600;
+    background-color: #b0ade3;
+    border-radius: 8px;
+    padding: 4px;
+    display: block;
+    cursor: pointer;
+    padding-bottom: 22px;
+    border: white;
+}
+
+#copyLink:active {
+    height: 23px;
+    width: 73px;
+    font-size: 85%;
+    font-weight: 600;
+    background-color: #5e59b6;
+    border-radius: 8px;
+    padding: 4px;
+    display: block;
+    cursor: pointer;
+    padding-bottom: 22px;
+    border: white;
+}
+
+.name_dp {
+    border-radius: 20px;
+    height: 34px;
+    width: 34px;
+    object-fit: cover;
+    position: absolute;
+    right: -41px;
+    top: -13px;
+}
+
+.logo_ {
+    object-fit: cover;
+    width: 51px;
+    height: 51px;
+}
+
+
+/* 
+.name_anony {
+    cursor: pointer;
+    width: max-content;
+    font-weight: initial;
+    padding: 0px 15px;
+    color: aqua;
+    text-align: center;
+    
+    background-color: #5b8078;
+    height: 19px;
+    position: absolute;
+    left: 0px;
+    top: -22px;
+    border-radius: 15px;
+    font-size: 80%;
+} */
+
+
+/* 2nd version */
+
+.name_anony {
+    cursor: pointer;
+    width: max-content;
+    font-weight: initial;
+    padding: 0px 15px;
+    color: aqua;
+    text-align: center;
+    /* width: 85px; */
+    background-color: #5b8078;
+    height: 19px;
+    position: absolute;
+    left: 0px;
+    top: -22px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-family: 'Hind Siliguri';
+    word-spacing: 0px;
+    letter-spacing: 0px;
+}
+
+.round-btn {
+    border-radius: 34px;
+    padding: 5px 7px;
+    /* background: #abf3ff;
+    border: 1px solid #a9effb; */
+    /* background: #219ea7; */
+    background: #43cad4;
+    border: 1px solid #073b44;
+}
+
+.round-btn:active {
+    border-radius: 34px;
+    padding: 5px 7px;
+    background: #35808d;
+    border: 1px solid #a9effb;
+}
+
+
+/* Popup alert */
+
+.popup {
+    position: absolute;
+    /* height: 100vh; */
+    width: 100%;
+    /* background-color: rgb(111 185 185 / 27%); */
+    /* opacity: 0.5; */
+    padding-top: 20vh;
+    box-sizing: border-box;
+    top: 3%;
+}
+
+.box {
+    box-shadow: 0px 0px 15px 3px #004d5a;
+    position: relative;
+    text-align: center;
+    min-height: 34vh;
+    max-width: 334px;
+    margin: auto;
+    /* background-color: rgb(170 221 231); */
+    background-color: rgb(221 229 231);
+    /* position: absolute; */
+    /* opacity: 9.3; */
+    border-radius: 15px;
+    border: 5px solid #1b7f90;
+    animation: scale-up-center 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.desc {
+    font-size: 110%;
+    margin-top: 11px;
+    font-weight: 400;
+    /* font-family: cursive; */
+    padding: 0px 10px;
+    max-height: 9vh;
+    overflow-y: auto;
+}
+
+.name_pop {
+    font-size: 130%;
+    font-weight: 500;
+}
+
+.dpShow {
+    object-fit: cover;
+    width: 170px;
+    height: 170px;
+    margin-top: 52px;
+    padding-top: 0px;
+    border-radius: 11px;
+    margin-bottom: 16px;
+    border: 4px solid #278772;
+}
+
+.cutBtn {
+    position: absolute;
+    right: 20px;
+    top: 16px;
+    border-radius: 33px;
+}
+
+.cutBtnR {
+    border-radius: 22px;
+    height: 38px;
+    font-size: 103%;
+    color: white;
+    font-weight: 400;
+    background-color: #1b7f90;
+    padding-left: 20px;
+    border: 3px solid #16616e;
+}
+
+.cutBtnR:active {
+    border-radius: 22px;
+    height: 38px;
+    font-size: 103%;
+    color: white;
+    font-weight: 400;
+    background-color: #00b6d6;
+    padding-left: 20px;
+    border: 3px solid #16616e;
+}
+
+.desc_inp {
+    width: 300px;
+    font-size: 42%;
+    border-radius: 8px;
+    padding-left: 15px;
+    border: 4px solid #10748f;
+    background-color: whitesmoke;
+}
+
+.memesCollec {
+    margin: 5px;
+    border-radius: 5px;
+    height: 75px;
+    width: 70px;
+    object-fit: cover;
+}
+
+#scrollBtn {
+    animation: fade-in .7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.entry_0 {
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: #073653;
+    /* background: linear-gradient(to bottom, #7b7b7b 0%, #02252e 100%); */
+    text-align: center;
+    height: 123vh;
+    width: 100%;
+    display: none;
+}
+
+.entry_0_div_0 {
+    position: absolute;
+    top: 16%;
+    /* display: flex; */
+    /* left: 0%; */
+    width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+    .entry_0 {
+        font-family: 'Hind Siliguri', sans-serif;
+        background-color: #073653;
+        /* background: linear-gradient(to bottom, #7b7b7b 0%, #02252e 100%); */
+        text-align: center;
+        height: 100vh;
+        width: 100%;
+        display: none;
+    }
+    .entry_0_div_0 {
+        position: absolute;
+        top: 4%;
+        /* display: flex; */
+        /* left: 0%; */
+        width: 100%;
+    }
+    #start {
+        display: block;
+        height: 100vh;
+        position: relative;
+    }
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    /* background-color: rgb(71, 65, 65); */
+    background-color: #242e39;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+
+/* Animations */
+
+@keyframes slide-out-top {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-1000px);
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scale-up-center {
+    0% {
+        transform: scale(0.88);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slide-fwd-center {
+    0% {
+        transform: translateZ(0);
+    }
+    100% {
+        transform: translateZ(160px);
+    }
+}
+
+@keyframes shadow-drop-2-center {
+    0% {
+        transform: translateZ(0);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+        transform: translateZ(50px);
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    }
+}
+
+@keyframes shadow-drop-2-center {
+    0% {
+        transform: translateZ(0);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+        transform: translateZ(50px);
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    }
+}
+
+@keyframes rotate-in-center {
+    0% {
+        transform: rotate(-360deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(0);
+        opacity: 1;
+    }
+}
