@@ -122,9 +122,14 @@ const go_in_clciked = () => {
         dp = anony_dp;
         document.getElementById('user_name').innerText = getFstName(name);
     }
-    desc = document.getElementById('desc_inp').value == '' ? "Hey There..!! I am inside Haveli" : document.getElementById('desc_inp').value;
+    let val = document.getElementById('desc_inp').value
+    let val2 = document.getElementById('desc_inp').value
+    console.log('berfore ? operator');
+    desc = val2 == '' ? "Hey There..!! I am inside Haveli" : val;
+    console.log("before replace all")
     desc = desc.replaceAll("<", " ");
     desc = desc.replaceAll(">", " ");
+    console.log("after replace all")
 
     joining_status = true;
 
