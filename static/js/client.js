@@ -54,7 +54,7 @@ const obj_entryMusic = {
 peer = new Peer(undefined, {
     path: 'peerjs',
     host: '/', // ye wala host peer create kr k dega...
-    port: 443,
+    port: 443
 
 })
 
@@ -106,48 +106,130 @@ const go_in_clciked = () => {
 
         document.getElementById('user_name').innerText = getFstName(name);
 
-    } else {
-        $.post('/checkchar', { room: room, char: anony_name }, (result, status) => {
-            // console.log(result);
-            if (result.status == 'available') {
 
-            } else if (result.status == 'not-available') {
-                alert('The character you selected has ALREADY TAKEN by another user')
-                return;
+        let val = document.getElementById('desc_inp').value
+        let val2 = document.getElementById('desc_inp').value
+        desc = val2 == '' ? "Hey There..!! I am inside Haveli" : val;
+        console.log("before replace all")
+        desc = desc.replaceAll("<", " ");
+        desc = desc.replaceAll(">", " ");
+        joining_status = true;
+
+
+        document.getElementById('go_in').style.display = 'none';
+        document.getElementById('start').style.display = 'block';
+        if (peer_status) {
+            socket.emit('new-user-joined', name, room, peerId, dp, anonymous, desc, `location`, gmail_recieved, name_recieved);
+            if (anonymous) {
+                $.post('/popchar', { room: room, name: name }, (data, status) => {
+                    if (data.status == "success") {
+                        // console.log("character poped from server");
+                    } else {
+                        // console.log("faied to pop from the server")
+                    }
+                })
             }
-        })
+        }
+
+
+
+    } else {
 
         document.getElementById('show_dp').src = anony_dp;
         name = anony_name;
         dp = anony_dp;
         document.getElementById('user_name').innerText = getFstName(name);
-    }
-    let val = document.getElementById('desc_inp').value
-    let val2 = document.getElementById('desc_inp').value
-    console.log('berfore ? operator');
-    desc = val2 == '' ? "Hey There..!! I am inside Haveli" : val;
-    console.log("before replace all")
-//     desc = desc.replaceAll("<", " ");
-//     desc = desc.replaceAll(">", " ");
-    console.log("after replace all")
 
-    joining_status = true;
+        $.post('/checkchar', { room: room, char: anony_name }, (result, status) => {
+            // console.log(result);
+            if (result.status == 'available') {
+                let val = document.getElementById('desc_inp').value
+                let val2 = document.getElementById('desc_inp').value
+                desc = val2 == '' ? "Hey There..!! I am inside Haveli" : val;
+                console.log("before replace all")
+                desc = desc.replaceAll("<", " ");
+                desc = desc.replaceAll(">", " ");
+                joining_status = true;
 
 
-    document.getElementById('go_in').style.display = 'none';
-    document.getElementById('start').style.display = 'block';
-    if (peer_status) {
-        socket.emit('new-user-joined', name, room, peerId, dp, anonymous, desc, `location`, gmail_recieved, name_recieved);
-        if (anonymous) {
-            $.post('/popchar', { room: room, name: name }, (data, status) => {
-                if (data.status == "success") {
-                    // console.log("character poped from server");
-                } else {
-                    // console.log("faied to pop from the server")
+                document.getElementById('go_in').style.display = 'none';
+                document.getElementById('start').style.display = 'block';
+                if (peer_status) {
+                    socket.emit('new-user-joined', name, room, peerId, dp, anonymous, desc, `location`, gmail_recieved, name_recieved);
+                    if (anonymous) {
+                        $.post('/popchar', { room: room, name: name }, (data, status) => {
+                            if (data.status == "success") {
+                                // console.log("character poped from server");
+                            } else {
+                                // console.log("faied to pop from the server")
+                            }
+                        })
+                    }
                 }
-            })
-        }
+
+            } else if (result.status == 'not-available') {
+                // alert('The character you selected has ALREADY TAKEN by another user')
+                dynamicPopup('The character you selected has ALREADY TAKEN by another user', 'You are Late');
+
+            }
+        })
+
     }
+
+
+
+
+
+    // if (!anonymous) {
+    //     name = name_recieved;
+    //     dp = dp_recieved;
+
+    //     document.getElementById('user_name').innerText = getFstName(name);
+
+    // } else {
+    //     $.post('/checkchar', { room: room, char: anony_name }, (result, status) => {
+    //         // console.log(result);
+    //         if (result.status == 'available') {
+
+    //         } else if (result.status == 'not-available') {
+    //             // alert('The character you selected has ALREADY TAKEN by another user')
+    //             dynamicPopup('You are Late', 'The character you selected has ALREADY TAKEN by another user')
+    //             flag = true;
+    //         }
+    //     })
+    //     console.log('after returned');
+    //     document.getElementById('show_dp').src = anony_dp;
+    //     name = anony_name;
+    //     dp = anony_dp;
+    //     document.getElementById('user_name').innerText = getFstName(name);
+    // }
+
+
+
+    // let val = document.getElementById('desc_inp').value
+    // let val2 = document.getElementById('desc_inp').value
+    // desc = val2 == '' ? "Hey There..!! I am inside Haveli" : val;
+    // console.log("before replace all")
+    // desc = desc.replaceAll("<", " ");
+    // desc = desc.replaceAll(">", " ");
+    // joining_status = true;
+
+
+    // document.getElementById('go_in').style.display = 'none';
+    // document.getElementById('start').style.display = 'block';
+    // if (peer_status) {
+    //     socket.emit('new-user-joined', name, room, peerId, dp, anonymous, desc, `location`, gmail_recieved, name_recieved);
+    //     if (anonymous) {
+    //         $.post('/popchar', { room: room, name: name }, (data, status) => {
+    //             if (data.status == "success") {
+    //                 // console.log("character poped from server");
+    //             } else {
+    //                 // console.log("faied to pop from the server")
+    //             }
+    //         })
+    //     }
+    // }
+
 
 }
 
@@ -452,19 +534,17 @@ const append = (name, message, position, dp, anony, peerid) => {
 }
 
 const dpClickedInChat = () => {
-    document.getElementById('container_m').style.filter = 'blur(5px)';
-    // document.getElementById('footer').style.filter = 'blur(3px)';
-    document.getElementById('send_m').style.filter = 'blur(5px)';
+
 
     //console.log("dpClickedInChat", event.target.getAttribute("alt"));
     clickedPeer = event.target.getAttribute("alt");
-    let user_left = false;
+    let present = false;
     for (let p in peers) {
         if (peers[p] == clickedPeer) {
-            user_left = true;
+            present = true;
         }
     }
-    if (!user_left) {
+    if (present) {
 
         popup = document.createElement("div");
         // popup.addEventListener('click', xPopedClicked, false);
@@ -490,7 +570,7 @@ const dpClickedInChat = () => {
             <span  style="position: absolute;top: 34px; left: 55px; font-size: 130%;  font-weight: 600; "  id="support">${peerIdNames[clickedPeer].reaction.support}</span>
             <img class="" style=" width: 38px; position: absolute; left: 87px; top: 15px;" src="https://sunnychatv2.herokuapp.com/static/media/angry.png" alt="" width="100px">
             <span style=" position: absolute;top: 33px;left: 126px;font-size: 130%;font-weight: 600;" id="report">${peerIdNames[clickedPeer].reaction.report+peerIdNames[clickedPeer].reaction.warn}</span>
-            <span style="position: absolute;top: 55px; left: 169px;" class="badge bg-success">Professor</span><br>
+            <br>
             <button class="btn btn-danger cutBtn" onClick="xPopedClicked() ">X</button>
             <img class="dpShow" src="${event.target.getAttribute("src")}" alt="" width="100px">
             <div>
@@ -498,15 +578,21 @@ const dpClickedInChat = () => {
                 <div class="desc">${peerIdNames[clickedPeer].desc}</div>
             </div>
             <div>
-                <button class=" mx-1 my-3 cutBtnR" onClick="support()" ><b><span id="togSupport">${support}</span></b> </button>
-                <button class="my-1 cutBtnR" onClick="report()" ><b><span id="togReport" >${report}</span></b>   </button>
+                <button class=" mx-1 px-4 my-3 cutBtnR" onClick="support()" ><b><span id="togSupport">${support}</span></b> </button>
+                <button class="my-1 px-4 cutBtnR" onClick="report()" ><b><span id="togReport" >${report}</span></b>   </button>
             </div>
         </div>`
         popup.classList.add("popup");
         let body = document.body;
         body.append(popup);
+
+        document.getElementById('container_m').style.filter = 'blur(5px)';
+        // document.getElementById('footer').style.filter = 'blur(3px)';
+        document.getElementById('send_m').style.filter = 'blur(5px)';
     } else {
-        alert("This user has LEFT the room.");
+        // alert("This user has LEFT the room.");
+        let dp = event.target.getAttribute("src")
+        dynamicPopup('No information available', 'User has left the Room', dp);
     }
 }
 
@@ -748,9 +834,9 @@ const update_users_modified_fun = (userName, peerIdNames) => {
             if (key == peerId) {
 
                 if (mic_status_users[key] == true) {
-                    str += `<img id="microphone2" style="border-radius: 30px; /* margin: 3px; */ object-fit: cover; width: 55px; height: 55px;"   value=0 src=${peerIdNames[key].dp} /><img id="microphone2"   width="34px" height="34px" value=0 src="./static/media/microphone.png" />` + peerIdNames[key].name + '<b>(You)</b><br>';
+                    str += `<img id="microphone2" style="border-radius: 30px; /* margin: 3px; */ object-fit: cover; width: 55px; height: 55px;"   value=0 src=${peerIdNames[key].dp} /><img id="microphone2"   width="34px" height="34px" value=0 src="./static/media/microphone.png" />` + peerIdNames[key].name + '<b> (You)</b><br>';
                 } else {
-                    str += `<img id="microphone2" style="border-radius: 30px;/* margin: 3px; */ object-fit: cover; width: 55px; height: 55px;"  value=0 src=${peerIdNames[key].dp} /><img id="microphone2"   width="34px" height="34px" value=0 src="./static/media/mute.png" />` + peerIdNames[key].name + '<b>(You)</b><br>';
+                    str += `<img id="microphone2" style="border-radius: 30px;/* margin: 3px; */ object-fit: cover; width: 55px; height: 55px;"  value=0 src=${peerIdNames[key].dp} /><img id="microphone2"   width="34px" height="34px" value=0 src="./static/media/mute.png" />` + peerIdNames[key].name + '<b> (You)</b><br>';
                 }
             } else {
                 if (mic_status_users[key] == true) {
@@ -894,7 +980,7 @@ socket.on('recieve', async(data) => {
         //enhanced logic
         let req_elem = document.getElementById(`msg_${data.msg_No}_${data.peerId}`).lastChild;
         // req_elem.innerText = 'Sent';
-        req_elem.innerHTML = `<img src='https://cdn.iconscout.com/icon/premium/png-64-thumb/tick-112-787934.png' style=" width: 21px; position: absolute; top: -47px ;right: -4px; /* background: #ffffff; */ border: none; border-radius: 40px;">`;
+        req_elem.innerHTML = `<img src='https://cdn.iconscout.com/icon/premium/png-64-thumb/tick-112-787934.png' style=" width: 15px; position: absolute; top: -43px ;right: -4px; /* background: #ffffff; */ border: none; border-radius: 40px;">`;
         req_elem.classList.remove('sending');
         req_elem.classList.add('sent');
     }
@@ -1612,7 +1698,7 @@ const roomUsers = () => {
             const str3 = `</div></div></div>`
             let str2 = ``;
             for (let e in result.result) {
-                str2 += `<div class="user" style=" margin: 0px 17px;text-align: center;"> <img class="imgUser" src=${result.result[e].dp} alt=""> <p>${result.result[e].name}</p>  </div>`;
+                str2 += `<div class="user" style=" margin: 0px 17px;text-align: center;"> <img class="imgUser" src=${e.dp} alt=""> <p>${e.name}</p>  </div>`;
             }
             document.getElementById('usersListFromFE').innerHTML = str1 + str2 + str3;
         }
@@ -1620,3 +1706,20 @@ const roomUsers = () => {
     })
 }
 roomUsers();
+
+
+const dynamicPopup = (message, messageHeader, pic) => {
+    let elem = document.createElement("div");
+    elem.classList.add('dynamicPopup');
+    let popup = '';
+    if (pic)
+        popup = `<div style="position: relative;background: #e0c8c8; text-align: center; padding: 35px 10px;top: 20%;border-radius: 14px;width: 282px;margin: auto;"><img src=${pic} alt="" style=" width: 100px;height: 100px;object-fit: cover; border-radius: 4px;"> <div style="font-size: 125%;margin: 15px 0px;">${messageHeader}</div> <div>${message}</div></div> `;
+    else
+        popup = `<div style="position: relative;background: #e0c8c8; text-align: center; padding: 35px 10px;top: 20%;border-radius: 14px;width: 282px;margin: auto;"> <div style="font-size: 125%;margin: 15px 0px;">${messageHeader}</div> <div>${message}</div></div> `;
+
+    elem.innerHTML = popup;
+    document.body.append(elem);
+    setTimeout(() => {
+        elem.remove();
+    }, 2200)
+}
