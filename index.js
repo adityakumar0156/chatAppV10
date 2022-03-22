@@ -274,6 +274,6 @@ app.post('/recieved-gif', (req, resp) => {
 
 
 
-server.listen(process.env.PORT || 8887, () => {
+server.listen(process.env.PORT, () => {
     console.log("App is listening at port 8887")
 })
