@@ -111,8 +111,8 @@ const go_in_clciked = () => {
         let val2 = document.getElementById('desc_inp').value
         desc = val2 == '' ? "Hey There..!! I am inside Haveli" : val;
         console.log("before replace all")
-        desc = desc.replaceAll("<", " ");
-        desc = desc.replaceAll(">", " ");
+        desc=desc.replace(/<|>/gi, "");
+
         joining_status = true;
 
 
@@ -147,8 +147,8 @@ const go_in_clciked = () => {
                 let val2 = document.getElementById('desc_inp').value
                 desc = val2 == '' ? "Hey There..!! I am inside Haveli" : val;
                 console.log("before replace all")
-                desc = desc.replaceAll("<", " ");
-                desc = desc.replaceAll(">", " ");
+                desc=desc.replace(/<|>/gi, "");
+                
                 joining_status = true;
 
 
