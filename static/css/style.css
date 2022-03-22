@@ -640,7 +640,8 @@ video {
     font-family: 'Hind Siliguri';
     letter-spacing: -1px;
     width: 21px;
-    top: 33px;
+/*     top: 33px; */
+    bottom:0px;
     right: 2px;
     font-weight: 900;
 }
