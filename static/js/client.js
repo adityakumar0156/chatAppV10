@@ -1694,11 +1694,11 @@ const roomUsers = () => {
         if (result.result == 0) {
             document.getElementById('usersListFromFE').innerHTML = ` <div style="text-align: center;font-size: 145%;background: #154f73;color: aliceblue;">No Users inside this room </div>`
         } else {
-            const str1 = `<div style=" background: #233d4c;">  <div style="text-align: center;font-size: 145%;background: #154f73;color: aliceblue;">Users inside room </div> <div style="display: flex;font-size: 130%;  width: 100%; overflow: auto; background: #233d4c; color: white; font-size: 90%; ">`
+            const str1 = `<div style=" background: #233d4c;">  <div style="text-align: center;font-size: 145%;background: #154f73;color: aliceblue;">Users inside room </div> <div style="display: flex;    justify-content: center;font-size: 130%;  width: 100%; overflow: auto; background: #233d4c; color: white; font-size: 90%; ">`
             const str3 = `</div></div></div>`
             let str2 = ``;
             for (let e in result.result) {
-                str2 += `<div class="user" style=" margin: 0px 17px;text-align: center;"> <img class="imgUser" src=${e.dp} alt=""> <p>${e.name}</p>  </div>`;
+                str2 += `<div class="user" style=" margin: 0px 17px;text-align: center;"> <img class="imgUser" src=${result.result[e].dp} alt=""> <p style="font-size: 121%;">${result.result[e].name}</p>  </div>`;
             }
             document.getElementById('usersListFromFE').innerHTML = str1 + str2 + str3;
         }
