@@ -24,9 +24,9 @@ const signOut = () => {
 //set data to a form then send the data to the server
 const send_google_data = () => {
     signOut();
-    document.getElementById('name').value = global_googleuser['uv']['Af']
-    document.getElementById('dp').value = global_googleuser['uv']['vO']
-    document.getElementById('gmail').value = global_googleuser['uv']['gw'];
+    document.getElementById('name').value = global_googleuser['tv']['Af']
+    document.getElementById('dp').value = global_googleuser['tv']['tO']
+    document.getElementById('gmail').value = global_googleuser['tv']['fw'];
     const room = document.getElementById('room_input').value;
     if (room != '') {
         document.getElementById('room').value = document.getElementById('room_input').value;
