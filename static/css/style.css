@@ -1021,23 +1021,3 @@ body {
     }
 }
 
-/*  July 2022*/
- .projects {
-            flex: 0 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            flex-direction: column;
-            height: 320px;
-            padding: 35px 10px;
-            justify-content: space-between;
-            margin: 10px;
-            background: beige;
-            border-radius: 8px;
-            width: 279px;
-     }
-        
-   .appname {
-            font-weight: 500;
-            font-size: 130%;
-    }
