@@ -71,7 +71,7 @@ const createRoom = () => {
 
 const copyClicked = () => {
     console.log("copy clicked")
-    navigator.clipboard.writeText(`http:localhost:8887/room/${link_g}`);
+    navigator.clipboard.writeText(`https://sunnychatv2.herokuapp.com/room/${link_g}`);
     document.getElementById('copyClicked').innerText = 'Copied'
 }
 
